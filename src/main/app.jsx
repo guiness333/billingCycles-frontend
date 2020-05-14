@@ -7,6 +7,7 @@ import Footer from '../common/template/footer';
 import Messages from '../common/msg/Messages';
 import Routes from './routes';
 
+
 export default props => (
     <div className='wrapper'>
         <Header />
