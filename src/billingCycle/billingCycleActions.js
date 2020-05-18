@@ -14,11 +14,13 @@ export function getList() {
     }
 }
 export function update(values){
-    return submit(values, 'put')
+    return submit(values, 'put');
 }
-
+export function remove(values){
+    return submit(values, 'delete');
+}
 export function create(values) {
-    return submit(values, 'post')
+    return submit(values, 'post');
 }
 function submit(values, method){
     return dispatch => {
@@ -35,13 +37,21 @@ function submit(values, method){
 
 }
 
-export function showUpdate(billingCycle) {
+/*export function showUpdate(billingCycle) {
     return [
         showTabs('tabUpdate'),
         selectTab('tabUpdate'),
         initialize('billingCycleForm', billingCycle)
     ]
+}*/
+export function focusTab(billingCycles, showTab, selTab){
+    return[
+        showTabs(...showTab),
+        selectTab(selTab),
+        initialize('billingCycleForm', billingCycles)
+    ]
 }
+
 export function init() {
     return [
         showTabs('tabList', 'tabCreate'),
